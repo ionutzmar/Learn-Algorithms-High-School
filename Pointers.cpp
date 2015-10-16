@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	b = 5;
 	a = &b;
 	cout << "\n&b: " << &b << "\na: " << a << "\n*a: " << *a << "\n&a: " << &a << endl;
-	int q = 7, *adr = &a;
+	int q = 7, *adr = &q;
 	cout << *adr;
 	return 0;
 }
