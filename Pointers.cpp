@@ -4,15 +4,16 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	struct elev
-	{
-		char nume[20], prenume[20];
-		float medie;
-		int varsta;
-	};
-	elev a;
-	cin >> a.nume;
-	a.varsta = 17;
-	cout << "Nume: " << a.nume << "\nVarsta: " << a.varsta; 
+	int *p, n;
+	n = 5;
+	p = &n;
+	cout << "&n: " << &n << "\np: " << p << "\n*p: " << *p << "\n&p: " << &p << endl;
+	cout << "Size of int: " << sizeof(int);
+	int *a, b;
+	b = 5;
+	a = &b;
+	cout << "\n&b: " << &b << "\na: " << a << "\n*a: " << *a << "\n&a: " << &a << endl;
+	int q = 7, *adr = &a;
+	cout << *adr;
 	return 0;
 }
