@@ -1,20 +1,24 @@
 #include <iostream>
+#include "utilities.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
-	int *a, c;
-	float *d, e;
-	a = &c;
-	d = &e;
-	e = 2.5;
-
-
-	cout << "a: " << a << "\nd: " << d << endl;
-	a = (int *)d;
-	cout << "a: " << a << "\nd: " << d << endl;
-	cout << "*a: " << *a << "\n*d: " << *d << endl;
-	cout << "size of float: " << sizeof(float);
+	float *a = new float[3];
+	0[a] = 1;
+	1[a] = 2;
+	a[2] = 3;
+	cout << a[0] << " " << a[1] << " " << a[2] << endl;
+	delete a;
+	cout << a[0] << " " << a[1] << " " << a[2] << endl;
+	a = new float[3];
+	0[a] = 1;
+	1[a] = 2;
+	a[2] = 3;
+	cout << a[0] << " " << a[1] << " " << a[2] << endl;
+	delete a;
+	cout << a[0] << " " << a[1] << " " << a[2];
 	return 0;
 }
+

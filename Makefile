@@ -1,5 +1,5 @@
 build:
-	gcc Pointers.cpp -o "Pointers" -lstdc++ -Wall
+	gcc Pointers.cpp -o "Pointers" -lstdc++ -fpermissive -Wall
 run:
 	Pointers.exe
 letter:
