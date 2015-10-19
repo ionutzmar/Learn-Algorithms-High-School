@@ -3,22 +3,25 @@
 
 using namespace std;
 
+int* sum(int a, int b)
+{
+	int *s = new int;
+	*s = a + b;
+	return s;
+}
+
 int main(int argc, char* argv[])
 {
-	float *a = new float[3];
-	0[a] = 1;
-	1[a] = 2;
-	a[2] = 3;
-	cout << a[0] << " " << a[1] << " " << a[2] << endl;
-	delete a;
-	cout << a[0] << " " << a[1] << " " << a[2] << endl;
-	a = new float[3];
-	0[a] = 1;
-	1[a] = 2;
-	a[2] = 3;
-	cout << a[0] << " " << a[1] << " " << a[2] << endl;
-	delete a;
-	cout << a[0] << " " << a[1] << " " << a[2];
-	return 0;
+	float (*a)[3][3][3], b[4][3][3][3];
+
+	b[3][2][2][1] = 1111;
+	
+	a = b;
+	cout << a[3][2][2][1] <<  endl;
+
+	
+	cout << *sum(2,3);
+
+	return 0; 
 }
 
