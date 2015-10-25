@@ -4,3 +4,5 @@ run:
 	Pointers.exe
 letter:
 	gcc CapitalLetters.cpp  -o "CapitalLetters" -lstdc++ -Wall
+prime:
+	gcc prime.cpp -o "prime" -lstdc++ -fpermissive -Wall

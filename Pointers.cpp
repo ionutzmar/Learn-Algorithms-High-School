@@ -3,24 +3,22 @@
 
 using namespace std;
 
-int* sum(int a, int b)
-{
-	int *s = new int;
-	*s = a + b;
-	return s;
-}
 
 int main(int argc, char* argv[])
 {
-	float (*a)[3][3][3], b[4][3][3][3];
+	int n;
+	float *v, s = 0;
 
-	b[3][2][2][1] = 1111;
-	
-	a = b;
-	cout << a[3][2][2][1] <<  endl;
+	cin >> n;
 
-	
-	cout << *sum(2,3);
+	v = new float[n];
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> v[i];
+		s += v[i];
+	}
+	cout << s / n;
 
 	return 0; 
 }
