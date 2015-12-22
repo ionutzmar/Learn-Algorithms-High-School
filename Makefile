@@ -1,7 +1,11 @@
-build:
+topologicSort:
+	gcc topologicSort.cpp -o "topSort" -lstdc++ -Wall
+minesweeper:
+	gcc minesweeper.cpp -o "minesweeper" -lstdc++ -Wall
+list:
 	gcc list.cpp -o "list" -lstdc++ -fpermissive -Wall
 run:
-	list.exe
+	./topSort
 letter:
 	gcc CapitalLetters.cpp  -o "CapitalLetters" -lstdc++ -Wall
 prime:
