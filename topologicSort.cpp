@@ -11,6 +11,8 @@ Input: 4 , (3,4), (4,3), (1,2), (3,1)
 Output: 3142 and 3412
 
 */
+int counter = 0;//how many times it looped
+
 struct node
 {
     int info;
@@ -27,24 +29,54 @@ void printList(node *nod)
 {
     while(nod)
     {
-        //cout << nod->info << "\n";
+        cout << nod->info << "\n";
         nod = nod->nextAddr;
     }
 }
-void addNodeLast(node* v,int value)  //add a node with info = value at the end of the list v
+
+void printVector(int **ans)
 {
-	if (v -> nextAddr)
-	{
-		addNodeLast(v -> nextAddr, value);
-	}
-	else
-	{
-		node* c = new node;
-		v -> nextAddr = c;
-		c -> nextAddr = 0;
-		c -> info = value;
-	}
+    for(int i = 0; i < counter; i++)
+    {
+        int indique = 0;
+        while(ans[i][indique] != -1)
+        {
+            cout << ans[i][indique] << " ";
+            indique++;
+        }
+    }
+    cout << "\n";
 }
+
+void printAnswer(int **ans, int **indices, int numRep)
+{
+
+    //
+    // for(int i = pos; i < counter; i++)
+    // {
+    //     if(ans[i][1] == -1)
+    //         cout << a[i] << " ";
+    //     else
+    //
+    //
+    // }
+    // for(int i = pos; i < counter; i++)
+    // {
+    //     if(ans[i][1] != -1)
+    //     {
+    //         int indique = 0;
+    //         while(ans[i][indique] != -1)
+    //             indique++;
+    //         indique -= 1;
+    //         do {
+    //             printVector(ans);
+    //             printAnswer(ans, i + 1);
+    //         } while(next_permutation(ans[i], ans[i] + indique));
+    //         break;
+    //     }
+    // }
+}
+
 
 int main(int argc, char const *argv[])
 {
@@ -60,7 +92,7 @@ int main(int argc, char const *argv[])
     cout << p << "\n";
     int *contor = new int[n];
     int **alternative = new int*[n];
-    for (i = 0; i < n; i++)
+    for (i = 0; i <= n; i++)
         alternative[i] = new int;
     node **adr = new node*[n];
     for(i = 0; i < n; i++)
@@ -76,11 +108,9 @@ int main(int argc, char const *argv[])
         addNodeFirst(adr[a - 1], b);
         contor[b - 1] += 1;
     }
-
     //solve(contor, adr);
 
     int status = 1; //it is 0 when the algorithm ends
-    int counter = 0;//how many times it looped
     int *reminder = new int[n];
     while(status)
     {
@@ -102,16 +132,43 @@ int main(int argc, char const *argv[])
             while(adr[reminder[i]])
             {
                 contor[adr[reminder[i]]->info - 1] -= 1;
-                adr[reminder[i]] = adr[reminder[i]] -> nextAddr;
+                adr[reminder[i]] = adr[reminder[i]]->nextAddr;
             }
         }
+        alternative[counter][status] = -1;
         counter++;
     }
 
+    bool corect = true;
     for (int i = 0; i < n; i++)
-        cout << alternative[i][0] << "\n";
-    if (n + 1 == counter)
-        cout << "Well done!\n";
-
+    {
+        if (contor[i] != -1)
+        {
+            cout << "Data is incorrect!";
+            corect = false;
+            break;
+        }
+    }
+    int **indices = new int*[n];  //positiona and number
+    for (int i = 0; i < n; i++)
+        indices[i] = new int[2];
+    int numRep = 0;
+    if (corect)
+    {
+        for(int i = 0; i < counter; i++)
+        {
+            int indique = 0;
+            while(alternative[i][indique] != -1)
+                indique++;
+            if (indique > 0)
+            {
+                indices[numRep][0] = i;
+                indices[numRep][1] = indique;
+                numRep++;
+            }
+            sort(alternative[i], alternative[i] + indique);
+        }
+        printAnswer(alternative, indices, numRep);
+    }
     return 0;
 }
