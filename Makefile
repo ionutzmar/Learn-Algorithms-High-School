@@ -1,3 +1,9 @@
+polinoms:
+	gcc polinoms.cpp -o "polinoms" -lstdc++ -Wall
+strcpy:
+	g++ polinoms.cpp -o "polinoms" -lstdc++ -Wall
+.PHONY: all polinoms clean
+.PHONY: all list clean
 topologicSort:
 	gcc topologicSort.cpp -o "topSort" -lstdc++ -Wall
 minesweeper:
@@ -5,7 +11,7 @@ minesweeper:
 list:
 	gcc list.cpp -o "list" -lstdc++ -fpermissive -Wall
 run:
-	./topSort
+	./polinoms
 letter:
 	gcc CapitalLetters.cpp  -o "CapitalLetters" -lstdc++ -Wall
 prime:

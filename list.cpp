@@ -63,9 +63,22 @@ void addNode(node* l, int value, int p)  //and a node to the list v at the posit
 	}
 }
 
-void inverseList(node* v)  //inverses the list v
+void inverse(node* v, node* c, node* &answer)  //inverses the list v; c = v->next_adr
 {
+	if(c->next_adr)
+		inverse(v->next_adr, c->next_adr, answer);
+	else
+		answer = c;
+	c->next_adr = v;
+}
 
+node* inverseList(node* &v)
+{
+	node * answer, *c = v->next_adr;
+	inverse(v, c, answer);
+	v->next_adr = 0;
+	v = answer;
+	return answer;
 }
 
 node* createList()
@@ -107,6 +120,9 @@ void showInv(node* v) //It shows the list in the invers order without the first 
 int main(int argc, char const *argv[])
 {
 	v = createList();
+
+	show(v);
+	inverseList(v);
 	show(v);
 
 	int pos, val;
@@ -117,6 +133,6 @@ int main(int argc, char const *argv[])
 		addNode(v, val, pos);
 		show(v);
 	}
-	
+
 	return 0;
 }
