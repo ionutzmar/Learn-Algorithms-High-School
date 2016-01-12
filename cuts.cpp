@@ -1,6 +1,9 @@
 #include <iostream>
 #include <fstream>
 
+/*You have a w * h board with n holes.
+You want to fins out what is the largest piece without holes you can cut. (Cuts are vertically or horisonatlly).
+ All numbers are integers. */
 /* in data.in first line is the number of holes, the second line  contains the dimensions of the board and next are the holes coordinates
 FORMAT X(width) and Y(height); the center of the axsis is top left.
 */
