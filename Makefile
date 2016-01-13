@@ -1,3 +1,5 @@
+graphics:
+	gcc backTracking.cpp -o "backTracking" -lstdc++ -Wall
 hanoi:
 	gcc hanoi.cpp -o "hanoi" -lstdc++ -Wall
 cuts:
@@ -14,6 +16,6 @@ topologicSort:
 list:
 	gcc list.cpp -o "list" -lstdc++ -fpermissive -Wall
 run:
-	./hanoi
+	./backTracking
 prime:
 	gcc prime.cpp -o "prime" -lstdc++ -fpermissive -Wall
