@@ -4,11 +4,19 @@ using namespace std;
 
 int n, *sol;
 
+int abs(int a)
+{
+    if (a >= 0)
+        return a;
+    return -a;
+}
+
+
 bool valide(int k)
 {
     bool ev = true;
     for(int i = 1; i <= k - 1; i++)
-        if (sol[k] == sol[i])
+        if (abs(i - k) == abs(sol[k] - sol[i]) || sol[k] == sol[i])
             ev = false; //return false
     return ev;
 }
