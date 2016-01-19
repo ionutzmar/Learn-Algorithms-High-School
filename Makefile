@@ -1,3 +1,5 @@
+aranjament:
+	gcc aranjament.cpp -o "aranjament" -lstdc++ -Wall
 graphics:
 	gcc backTracking.cpp -o "backTracking" -lstdc++ -Wall
 hanoi:
@@ -11,11 +13,12 @@ strcpy:
 .PHONY: all polinoms clean
 .PHONY: all list clean
 .PHONY: all cuts clean
+.PHONY: all aranjament clean
 topologicSort:
 	gcc topologicSort.cpp -o "topSort" -lstdc++ -Wall
 list:
 	gcc list.cpp -o "list" -lstdc++ -fpermissive -Wall
 run:
-	./backTracking
+	./aranjament
 prime:
 	gcc prime.cpp -o "prime" -lstdc++ -fpermissive -Wall
