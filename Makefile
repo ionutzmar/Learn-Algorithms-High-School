@@ -1,3 +1,15 @@
+cycles:
+	gcc cycles.cpp -o "cycles" -lstdc++ -Wall
+dijkstra:
+	gcc dijkstra.cpp -o "dijkstra" -lstdc++ -Wall
+fibonacci:
+	gcc fibonacci.cpp -o "fibonacci" -lstdc++ -Wall
+prim:
+	gcc prim.cpp -o "prim" -lstdc++ -Wall
+royFloyd:
+	gcc royFloyd.cpp -o "royFloyd" -lstdc++ -Wall
+triangle:
+	gcc triangle.cpp -o "triangle" -lstdc++ -Wall
 aranjament:
 	gcc aranjament.cpp -o "aranjament" -lstdc++ -Wall
 graphics:
